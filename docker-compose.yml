@@ -1,11 +1,11 @@
 version: '3.2'
 services:
-  server:
+  web:
     build:
       context: ./
       dockerfile: Dockerfile
-    image: jayrorrc/server:latest
-    container_name: web-server
+    image: jayrorrc/webpack:latest
+    container_name: web-app
     ports:
       - 3000:3000
     volumes:
