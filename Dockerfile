@@ -1,8 +1,8 @@
 FROM node:latest
 
-COPY ./server /opt/web
+COPY ./ /opt/web
 
-WORKDIR /opt/web
+WORKDIR /opt/web/server
 RUN npm install
 
 EXPOSE 3000

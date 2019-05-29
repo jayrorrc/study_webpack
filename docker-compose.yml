@@ -3,31 +3,31 @@ services:
   server:
     build:
       context: ./
-      dockerfile: dk-server.Dockerfile
+      dockerfile: Dockerfile
     image: jayrorrc/server:latest
     container_name: web-server
     ports:
       - 3000:3000
     volumes:
       - type: bind
-        source: ./server/
+        source: ./
         target: /opt/web
     networks:
       - study
-  client:
-    build:
-      context: ./
-      dockerfile: dk-client.Dockerfile
-    image: jayrorrc/client:latest
-    container_name: web-client
-    ports:
-      - 8080:8080
-    volumes:
-      - type: bind
-        source: ./client/
-        target: /opt/web
-    networks:
-      - study
+  # client:
+  #   build:
+  #     context: ./
+  #     dockerfile: dk-client.Dockerfile
+  #   image: jayrorrc/client:latest
+  #   container_name: web-client
+  #   ports:
+  #     - 8080:8080
+  #   volumes:
+  #     - type: bind
+  #       source: ./client/
+  #       target: /opt/web
+  #   networks:
+  #     - study
 
 networks:
   study:
