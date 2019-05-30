@@ -1,16 +1,16 @@
 version: '3.2'
 services:
-  web:
+  server:
     build:
       context: ./
-      dockerfile: Dockerfile
-    image: jayrorrc/webpack:latest
-    container_name: web-app
+      dockerfile: dk-server.Dockerfile
+    image: jayrorrc/webpack-server:latest
+    container_name: web-server
     ports:
       - 3000:3000
     volumes:
       - type: bind
-        source: ./
+        source: ./server/
         target: /opt/web
     networks:
       - study
@@ -18,7 +18,7 @@ services:
   #   build:
   #     context: ./
   #     dockerfile: dk-client.Dockerfile
-  #   image: jayrorrc/client:latest
+  #   image: jayrorrc/webpack-client:latest
   #   container_name: web-client
   #   ports:
   #     - 8080:8080
