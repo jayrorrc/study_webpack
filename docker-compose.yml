@@ -14,20 +14,20 @@ services:
         target: /opt/web
     networks:
       - study
-  client:
-    build:
-      context: ./
-      dockerfile: dk-client.Dockerfile
-    image: jayrorrc/webpack-client:latest
-    container_name: web-client
-    ports:
-      - 8080:8080
-    volumes:
-      - type: bind
-        source: ./client/
-        target: /opt/web
-    networks:
-      - study
+  # client:
+  #   build:
+  #     context: ./
+  #     dockerfile: dk-client.Dockerfile
+  #   image: jayrorrc/webpack-client:latest
+  #   container_name: web-client
+  #   ports:
+  #     - 8080:8080
+  #   volumes:
+  #     - type: bind
+  #       source: ./client/
+  #       target: /opt/web
+  #   networks:
+  #     - study
 
 networks:
   study:

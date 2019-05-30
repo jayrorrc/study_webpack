@@ -1,12 +1,8 @@
 FROM node:latest
 
-COPY ./ /opt/web
+COPY ./server /opt/web
 
-# WORKDIR /opt/web/client
-# RUN npm install
-# RUN npm run build-dev
-
-WORKDIR /opt/web/server
+WORKDIR /opt/web/
 RUN npm install
 
 EXPOSE 3000
